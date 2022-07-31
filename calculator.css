@@ -1,0 +1,164 @@
+body{
+    background-color: rgb(185, 185, 185);
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    font-size: small;
+}
+
+header div span{
+    padding: 7px 20px;
+}
+
+header div span:last-child:hover{
+    background-color: rgb(245, 65, 33);
+}
+
+header div span:hover{
+    background-color: rgb(215, 213, 213);
+}
+
+.maincontainer {
+    height: 745px;/*desktop*/
+    display: grid;
+    grid-template-columns: auto 320px;
+    
+}
+
+.standard{
+    display: flex;
+    align-items: center;
+}
+
+.history{
+    width: 15px;
+    height: 15px;
+    margin-left: auto;
+    visibility: hidden;
+}
+
+.standard span{
+    font-size: 20px;
+    padding: 2px 12px;
+}
+
+.standard span:first-child:hover{
+    background-color: rgb(215, 213, 213);
+}
+
+.content {
+    display: flex;
+    height: 35%;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.zero {
+    margin-left: auto;
+    font-size: 60px;
+}
+
+.m span{
+    font-size: 17px;
+    margin-left: 50px;
+}
+
+.m span:first-child {
+    margin-left: 30px;
+}
+
+.m span:last-child {
+    visibility: hidden;
+}
+
+.num{
+    margin-top: 15px;
+    height: 420px;
+    background-color: rgb(222, 220, 220);
+    display: grid;
+    grid-template-columns: repeat(5,1fr);  
+}
+
+.num>div{
+    padding: 10px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(185, 185, 185);  
+}
+
+.w{
+    background-color: rgb(248, 247, 245);
+    font-weight: bold;
+}
+
+.num>div:hover{
+    background-color: rgb(185, 185, 185);
+}
+
+.number {
+    margin-top: 15px;
+    height: 420px;
+    background-color: rgb(222, 220, 220);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    display: none;
+}
+
+.number>div {
+    padding: 10px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(185, 185, 185);
+}
+
+.number>div:hover {
+    background-color: rgb(185, 185, 185);
+}
+
+.top b{
+    margin-left: 15px;
+}
+
+.top b:first-child {
+    border-bottom: 3px solid rgb(255, 106, 0);
+    padding-bottom: 4px;
+}
+
+/*media query*/
+
+@media screen and (max-width:600px) {/*phon*/
+    .right{
+        display: none;
+    }
+
+    .maincontainer{
+        height: 400px;
+        grid-template-columns: 1fr;
+    }
+
+    .history{
+        visibility: visible;
+    }
+
+    .m span:last-child {
+        visibility: visible;
+    }
+
+    .num{
+        display: none;
+    }
+
+    .number{
+        display: grid;
+    }
+
+    .content {
+        height: 10%;
+    }
+}
