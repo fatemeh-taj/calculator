@@ -6,6 +6,7 @@ header{
     display: flex;
     justify-content: space-between;
     font-size: small;
+    margin-bottom: 10px;
 }
 
 header div span{
@@ -161,4 +162,5 @@ header div span:hover{
     .content {
         height: 10%;
     }
+ 
 }
