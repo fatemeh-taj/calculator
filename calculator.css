@@ -28,7 +28,7 @@ header div span:hover{
 }
 
 .maincontainer {
-    background-color: rgb(192, 247, 247);
+   
     display: grid;
     grid-template-columns: auto 320px; 
     min-height: 96vh;
@@ -41,6 +41,7 @@ header div span:hover{
 .standard{
     display: flex;
     align-items: center;
+    height: 5%;
 }
 
 .history{
@@ -61,7 +62,7 @@ header div span:hover{
 
 .content {
     display: flex;
-    height: 35%;
+    height: 30%;
     align-items: center;
     margin-right: 10px;
 }
@@ -69,6 +70,10 @@ header div span:hover{
 .zero {
     margin-left: auto;
     font-size: 60px;
+}
+
+.m{
+    height: 5%;
 }
 
 .m span{
@@ -85,8 +90,7 @@ header div span:hover{
 }
 
 .num{
-    margin-top: 15px;
-    min-height: 420px;
+    height: 60%;
     background-color: rgb(215, 213, 213);
     display: grid;
     grid-template-columns: repeat(5,1fr); 
