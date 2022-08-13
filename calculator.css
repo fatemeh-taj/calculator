@@ -2,6 +2,7 @@ body{
     background-color: #848484bf;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
+    overflow: hidden;
 }
 
 header{
@@ -28,14 +29,10 @@ header div span:hover{
 }
 
 .maincontainer {
-   
+    background-color: rgb(192, 247, 247);
     display: grid;
     grid-template-columns: auto 320px; 
     min-height: 96vh;
-}
-
-.main{
-
 }
 
 .standard{
@@ -115,8 +112,7 @@ header div span:hover{
 }
 
 .number {
-    margin-top: 15px;
-    height: 420px;
+    height: 70%;
     background-color: rgb(222, 220, 220);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -177,4 +173,26 @@ header div span:hover{
         height: 10%;
     }
  
+}
+
+@media screen and (max-height:620px) {
+
+    .content{
+        height: 20%;
+    }
+
+    .num {
+        height: 70%;
+        display: none;
+    }
+        
+    .number {
+        display: grid;
+    }
+}
+
+@media screen and (max-height:410px) {
+    body{
+        overflow-y: scroll;
+    }
 }
