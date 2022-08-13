@@ -29,7 +29,6 @@ header div span:hover{
 }
 
 .maincontainer {
-    background-color: rgb(192, 247, 247);
     display: grid;
     grid-template-columns: auto 320px; 
     min-height: 96vh;
@@ -46,6 +45,8 @@ header div span:hover{
     height: 15px;
     margin-left: auto;
     visibility: hidden;
+    opacity: 0.5;
+    padding-right: 5px;
 }
 
 .standard span{
@@ -66,16 +67,17 @@ header div span:hover{
 
 .zero {
     margin-left: auto;
-    font-size: 60px;
+    font-size: 50px;
 }
 
 .m{
     height: 5%;
+    display: grid;
+    grid-template-columns: repeat(5,90px);
 }
 
 .m span{
     font-size: 17px;
-    margin-left: 50px;
 }
 
 .m span:first-child {
@@ -84,6 +86,9 @@ header div span:hover{
 
 .m span:last-child {
     visibility: hidden;
+    opacity: 0.5;
+    margin-left: auto;
+    padding-right: 5px;
 }
 
 .num{
@@ -112,7 +117,7 @@ header div span:hover{
 }
 
 .number {
-    height: 70%;
+    height: 60%;
     background-color: rgb(222, 220, 220);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -143,50 +148,20 @@ header div span:hover{
 
 /*media query*/
 
-@media screen and (max-width:600px) {/*phon*/
-    .right{
-        display: none;
-    }
-
-    .maincontainer{
-        height: 400px;
-        grid-template-columns: 1fr;
-    }
-
-    .history{
-        visibility: visible;
-    }
-
-    .m span:last-child {
-        visibility: visible;
-    }
-
-    .num{
-        display: none;
-    }
-
-    .number{
-        display: grid;
-    }
-
-    .content {
-        height: 10%;
-    }
- 
-}
-
+/*height responsive*/
 @media screen and (max-height:620px) {
 
     .content{
-        height: 20%;
+        height: 17%;
     }
 
     .num {
-        height: 70%;
+        height: 73%;
         display: none;
     }
         
     .number {
+        height: 70%;
         display: grid;
     }
 }
@@ -194,5 +169,53 @@ header div span:hover{
 @media screen and (max-height:410px) {
     body{
         overflow-y: scroll;
+    }
+}
+
+/* width responsive */
+@media screen and (max-width:1024px) {
+    .num {
+        display: none;
+    }
+
+    .number {
+        display: grid;
+    }
+}
+
+@media screen and (max-width:740px) {
+    .m {
+        justify-content: space-between;
+        grid-template-columns: repeat(5, minmax(30px, 200px));
+    }
+
+    .m span:first-child {
+        margin-left: 5px;
+    }
+
+    .maincontainer{
+        grid-template-columns: auto minmax(100px, 320px);
+    }
+}
+
+@media screen and (max-width:500px) {
+    .right {
+        display: none;
+    }
+
+    .maincontainer {
+        grid-template-columns: 1fr;
+    }
+
+    .history {
+        visibility: visible;
+    }
+
+    .m span:last-child {
+        visibility: visible;    
+    }
+
+    .m {
+        grid-template-columns: repeat(6, 70px);
     }
 }
