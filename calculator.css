@@ -1,46 +1,46 @@
-body{
+body {
     background-color: rgb(230, 230, 230);
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     overflow: hidden;
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
     font-size: small;
     min-height: 4vh;
 }
 
-header div{
+header div {
     padding: 5px 0px 5px 5px;
 }
 
-header div span{
+header div span {
     padding: 7px 20px;
 }
 
-header div span:last-child:hover{
+header div span:last-child:hover {
     background-color: rgb(245, 65, 33);
 }
 
-header div span:hover{
+header div span:hover {
     background-color: rgb(215, 213, 213);
 }
 
 .maincontainer {
     display: grid;
-    grid-template-columns: auto 320px; 
+    grid-template-columns: auto 320px;
     min-height: 96vh;
 }
 
-.standard{
+.standard {
     display: flex;
     align-items: center;
     height: 5%;
 }
 
-.history{
+.history {
     width: 15px;
     height: 15px;
     margin-left: auto;
@@ -49,12 +49,12 @@ header div span:hover{
     padding-right: 5px;
 }
 
-.standard span{
+.standard span {
     font-size: 20px;
     padding: 2px 12px;
 }
 
-.standard span:first-child:hover{
+.standard span:first-child:hover {
     background-color: rgb(215, 213, 213);
 }
 
@@ -70,13 +70,13 @@ header div span:hover{
     font-size: 50px;
 }
 
-.m{
+.m {
     height: 5%;
     display: grid;
-    grid-template-columns: repeat(5,90px);
+    grid-template-columns: repeat(5, 90px);
 }
 
-.m span{
+.m span {
     font-size: 17px;
 }
 
@@ -91,34 +91,34 @@ header div span:hover{
     padding-right: 5px;
 }
 
-.num{
+.num {
     height: 60%;
     background-color: rgb(240, 240, 240);
     display: grid;
-    grid-template-columns: repeat(5,1fr); 
+    grid-template-columns: repeat(5, 1fr);
 }
 
-.num>div{
+.num>div {
     padding: 10px;
     font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgb(230, 230, 230);  
+    border: 1px solid rgb(230, 230, 230);
 }
 
-.w{
+.w {
     background-color: rgb(250, 250, 250);
     font-weight: bold;
 }
 
-.num>div:hover{
+.num>div:hover {
     background-color: rgb(230, 230, 230);
 }
 
 .number {
     height: 60%;
-    background-color:rgb(240, 240, 240);
+    background-color: rgb(240, 240, 240);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     display: none;
@@ -137,7 +137,7 @@ header div span:hover{
     background-color: rgb(230, 230, 230);
 }
 
-.top b{
+.top b {
     margin-left: 15px;
 }
 
@@ -151,7 +151,7 @@ header div span:hover{
 /*height responsive*/
 @media screen and (max-height:620px) {
 
-    .content{
+    .content {
         height: 17%;
     }
 
@@ -159,7 +159,7 @@ header div span:hover{
         height: 73%;
         display: none;
     }
-        
+
     .number {
         height: 70%;
         display: grid;
@@ -167,7 +167,7 @@ header div span:hover{
 }
 
 @media screen and (max-height:410px) {
-    body{
+    body {
         overflow-y: scroll;
     }
 }
@@ -193,7 +193,7 @@ header div span:hover{
         margin-left: 5px;
     }
 
-    .maincontainer{
+    .maincontainer {
         grid-template-columns: auto minmax(100px, 320px);
     }
 }
@@ -212,7 +212,7 @@ header div span:hover{
     }
 
     .m span:last-child {
-        visibility: visible;    
+        visibility: visible;
     }
 
     .m {
