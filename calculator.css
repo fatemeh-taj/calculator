@@ -1,19 +1,54 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-:root {
+:root[data-theme="default"] {
     --background: rgb(230, 230, 230);
     --dark-btn: rgb(240, 240, 240);
     --num-btn: rgb(250, 250, 250);
     --menu-hover: rgb(215, 213, 213);
+    --radius: 0;
+    --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root[data-theme="green"] {
+    --background: rgb(215, 241, 125);
+    --dark-btn: rgb(130, 217, 63);
+    --num-btn: rgb(177, 239, 72);
+    --menu-hover: rgb(61, 152, 44);
+    --radius: 15px;
+    --font-family: "Inconsolata", monospace;
+}
+
+:root[data-theme="blue"] {
+    --background: rgb(196, 235, 247);
+    --dark-btn: rgb(77, 194, 229);
+    --num-btn: rgb(132, 215, 237);
+    --menu-hover: rgb(0, 97, 174);
+    --radius: 15px 0 15px 0;
+    --font-family: "Kalam", cursive;
+}
+
+:root[data-theme="pink"] {
+    --background: linear-gradient(#B7B0E3, #FFD3D6);
+    --dark-btn: #a28089;
+    --num-btn: #ffa8B6;
+    --menu-hover: #e84393;
+    --radius: 10px 10px 10px 0;
+    --font-family: "Pathway Gothic One", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: var(--background);
 }
 
 #container {
-    background: var(--background);
     height: 100vh;
     width: 100vw;
     display: grid;
@@ -52,16 +87,10 @@ li:hover {
 }
 
 h1 {
+    font-family: var(--font-family);
     font-size: 0.8rem;
     margin-top: 8px;
     margin-left: 10px;
-}
-
-#result {
-    grid-area: result;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .standard {
@@ -72,7 +101,8 @@ h1 {
 }
 
 .menu,
-.history-icon {
+.history-icon,
+.trash {
     width: 39px;
     height: 39px;
     padding: 10px;
@@ -86,6 +116,7 @@ h1 {
 
 .menu:hover {
     background-color: var(--menu-hover);
+    border-radius: var(--radius);
 }
 
 .history-icon:hover {
@@ -96,6 +127,14 @@ h1 {
     margin-left: 5px;
     margin-top: 4px;
     font-size: 1.3em;
+    font-family: var(--font-family);
+}
+
+#result {
+    grid-area: result;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .number {
@@ -103,6 +142,7 @@ h1 {
     align-self: flex-end;
     margin-right: 10px;
     font-weight: 600;
+    font-family: var(--font-family);
 }
 
 .up {
@@ -136,6 +176,7 @@ h1 {
     justify-content: center;
     align-items: center;
     font-size: 0.8em;
+    font-family: var(--font-family);
     border: none;
     background-color: transparent;
 }
@@ -152,8 +193,6 @@ h1 {
 }
 
 .num {
-    font-size: 1.6em;
-    font-weight: 600;
     background: var(--num-btn);
 }
 
@@ -170,19 +209,20 @@ h1 {
     width: 24.5%;
     height: 16.1%;
     border: none;
-    border-radius: 3px;
+    border-radius: var(--radius);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-family: var(--font-family);
 }
 
 .Btn:hover {
-    background-color: var(--background);
+    background-color: var(--menu-hover);
 }
 
 .active:hover {
-    background-color: var(--background);
+    background-color: var(--menu-hover);
+    border-radius: var(--radius);
 }
 
 #history,
@@ -196,6 +236,7 @@ h1 {
     display: flex;
     align-items: center;
     padding-left: 13px;
+    font-family: var(--font-family);
 }
 
 .mem {
@@ -215,6 +256,19 @@ h1 {
     margin-left: 8px;
     font-size: 0.9em;
     font-weight: bold;
+    font-family: var(--font-family);
+}
+
+.trash {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-top: auto;
+}
+
+.trash:hover {
+    background-color: var(--menu-hover);
+    border-radius: var(--radius);
 }
 
 .first {

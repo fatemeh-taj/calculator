@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="default">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="calculator.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./calculator.css">
     <title>calculator</title>
     <script src="https://kit.fontawesome.com/6eb1eb31ae.js" crossorigin="anonymous"></script>
     <link rel="icon" href="https://img.icons8.com/bubbles/100/000000/calculator.png">
@@ -24,7 +27,9 @@
         <div id="result">
             <div class="up">
                 <div class="standard">
-                    <p class="menu">&equiv;</p>
+                    <p class="menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </p>
                     <p class="stand">Standard</p>
                     <i class="history-icon" class="fa-solid fa-clock-rotate-left"></i>
                 </div>
@@ -79,9 +84,12 @@
             </div>
             <div class="text-history">
                 <p>There's no history yet.</p>
+                <div class="trash">
+                    <i class="fa-regular fa-trash-can"></i>
+                </div>
             </div>
         </div>
     </div>
+    <script src="./script.js"></script>
 </body>
-
 </html>
