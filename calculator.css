@@ -100,26 +100,31 @@ h1 {
     flex-direction: row;
 }
 
-.menu,
-.history-icon,
-.trash {
+#history-icon,
+#trash {
     width: 39px;
     height: 39px;
     padding: 10px;
 }
 
-.history-icon {
+#history-icon {
     justify-content: center;
     align-items: center;
     margin-left: auto;
 }
 
-.menu:hover {
+#menu {
+    width: 39px;
+    height: 39px;
+    padding: 10px 0px 0px 12px;
+}
+
+#menu:hover {
     background-color: var(--menu-hover);
     border-radius: var(--radius);
 }
 
-.history-icon:hover {
+#history-icon:hover {
     background-color: var(--menu-hover);
 }
 
@@ -196,15 +201,6 @@ h1 {
     background: var(--num-btn);
 }
 
-.one-x {
-    width: 1.5rem;
-    height: 1.5rem;
-}
-
-#buttons .btnhide {
-    display: none;
-}
-
 .Btn {
     width: 24.5%;
     height: 16.1%;
@@ -251,7 +247,7 @@ h1 {
     font-weight: bold;
 }
 
-.text-history p {
+.text-history {
     margin-top: 30px;
     margin-left: 8px;
     font-size: 0.9em;
@@ -259,14 +255,13 @@ h1 {
     font-family: var(--font-family);
 }
 
-.trash {
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    margin-top: auto;
+#trash {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
 }
 
-.trash:hover {
+#trash:hover {
     background-color: var(--menu-hover);
     border-radius: var(--radius);
 }
@@ -305,7 +300,7 @@ h1 {
         display: none;
     }
 
-    .history-icon {
+    #history-icon {
         display: none;
     }
 

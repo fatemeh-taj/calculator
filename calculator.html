@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./calculator.css">
     <title>calculator</title>
     <script src="https://kit.fontawesome.com/6eb1eb31ae.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="https://img.icons8.com/bubbles/100/000000/calculator.png">
+    <link rel="icon" href="https://img.icons8.com/dusk/100/7950F2/calculator.png">
 </head>
 
 <body>
@@ -25,14 +25,10 @@
             </ul>
         </div>
         <div id="result">
-            <div class="up">
-                <div class="standard">
-                    <p class="menu">
-                        <i class="fa-solid fa-bars"></i>
-                    </p>
-                    <p class="stand">Standard</p>
-                    <i class="history-icon" class="fa-solid fa-clock-rotate-left"></i>
-                </div>
+            <div class="standard">
+                <i id="menu" class="fa-solid fa-bars"></i>
+                <p class="stand">Standard</p>
+                <i id="history-icon" class="fa-solid fa-clock-rotate-left"></i>
             </div>
             <p class="number">0</p>
             <div class="small">
@@ -42,11 +38,7 @@
                     <button class="small-ms active">M+</button>
                     <button class="small-ms active">M-</button>
                     <button class="small-ms active">MS</button>
-                    <button class="small-ms active plus" disabled>
-                        M
-                        <sup class="extera-m"><img
-                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAABmJLR0QA/wD/AP+gvaeTAAAAbUlEQVQYlaWOMQqFMBBEn5JN9ZscaW9gLR7OA9j9yioX2DbXSGUhZAubzycg2DgwzTyYGXirASDn/AkhSA/cvanqMQKIyArU3r+MESClNAPfrmBvrS3/CYBSSqy1bkB090lVz9shMxMzkxt40gUoAiI1vvmaBwAAAABJRU5ErkJggg==" /></sup>
-                    </button>
+                    <button class="small-ms active plus" disabled>M<sup class="extera-m">*</sup></button>
                 </div>
             </div>
         </div>
@@ -82,14 +74,11 @@
                 <p class="his">History</p>
                 <p class="mem">Memory</p>
             </div>
-            <div class="text-history">
-                <p>There's no history yet.</p>
-                <div class="trash">
-                    <i class="fa-regular fa-trash-can"></i>
-                </div>
-            </div>
+            <p class="text-history">There's no history yet.</p>
+            <i id="trash" class="fa-regular fa-trash-can"></i>
         </div>
     </div>
     <script src="./script.js"></script>
 </body>
+
 </html>
