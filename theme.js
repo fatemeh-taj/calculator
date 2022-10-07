@@ -2,7 +2,7 @@
 
 let root = document.querySelector("html");
 
-document.querySelector("#menu").addEventListener("click", () => {
+document.querySelector("#menu-icon").addEventListener("click", () => {
     
     switch (root.getAttribute("data-theme")) {
         case "default":

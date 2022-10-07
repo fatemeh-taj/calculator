@@ -27,7 +27,7 @@
 
 :root[data-theme="pink"] {
     --background: linear-gradient(#B7B0E3, #FFD3D6);
-    --dark-btn: #a28089;
+    --dark-btn: #b58e98;
     --num-btn: #ffa8B6;
     --menu-hover: #e84393;
     --radius: 10px 10px 10px 0;
@@ -38,6 +38,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--font-family);
 }
 
 html,
@@ -100,26 +101,25 @@ h1 {
     flex-direction: row;
 }
 
-#history-icon,
-#trash {
-    width: 39px;
-    height: 39px;
-    padding: 10px;
-}
-
 #history-icon {
-    justify-content: center;
+    display: flex;
     align-items: center;
-    margin-left: auto;
+    justify-content: center;
+    width: 40px;
+    height: 100%;
 }
 
-#menu {
+#history-icon:hover {
+    background-color: var(--menu-hover);
+}
+
+#menu-icon {
     width: 39px;
     height: 39px;
     padding: 10px 0px 0px 12px;
 }
 
-#menu:hover {
+#menu-icon:hover {
     background-color: var(--menu-hover);
     border-radius: var(--radius);
 }
@@ -130,7 +130,7 @@ h1 {
 
 .stand {
     margin-left: 5px;
-    margin-top: 4px;
+    margin-top: 7px;
     font-size: 1.3em;
     font-family: var(--font-family);
 }
@@ -142,21 +142,31 @@ h1 {
     justify-content: space-between;
 }
 
-.number {
-    font-size: 2.8rem;
+.resultText {
+    display: flex;
     align-self: flex-end;
+    flex-direction: column;
     margin-right: 10px;
-    font-weight: 600;
     font-family: var(--font-family);
 }
 
-.up {
+#PreviousNumber {
+    align-self: flex-end;
+    color: #b1afaf;
+    font-family: var(--font-family);
+}
+
+.CurrentNumber {
     width: 100%;
-    height: 19.9%;
-    min-height: 39px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding-left: 4px;
+    border: none;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: right;
+    font-family: var(--font-family);
+    background-color: transparent;
+    resize: none;
+    outline: none;
 }
 
 .small {
@@ -171,7 +181,7 @@ h1 {
     width: 100%;
     height: 100%;
     justify-content: space-evenly;
-    max-width: 550px;
+    max-width: 350px;
 }
 
 .small-ms {
@@ -184,6 +194,10 @@ h1 {
     font-family: var(--font-family);
     border: none;
     background-color: transparent;
+}
+
+.extera {
+    display: block;
 }
 
 #buttons {
@@ -226,6 +240,11 @@ h1 {
     display: none;
 }
 
+.his,
+.memory {
+    color: black;
+}
+
 .history-and-memory {
     width: 100%;
     height: 40px;
@@ -235,35 +254,189 @@ h1 {
     font-family: var(--font-family);
 }
 
-.mem {
+.hidden-history,
+.hidden-memory {
+    position: absolute;
+    overflow: auto;
+    width: 100%;
+    height: 62%;
+    min-height: 240px;
+    z-index: -1;
+    top: 38%;
+    background-color: var(--background);
+}
+
+.memory {
+    margin-top: 4px;
+    border-bottom: 3px solid orange;
     margin-left: 35px;
-    font-weight: bold;
 }
 
 .his {
     margin-top: 7px;
-    border-bottom: 3px solid orange;
     padding-bottom: 3px;
-    font-weight: bold;
 }
 
-.text-history {
+.text-history,
+.text-memory {
     margin-top: 30px;
     margin-left: 8px;
     font-size: 0.9em;
-    font-weight: bold;
-    font-family: var(--font-family);
+    font-weight: 600;
 }
 
-#trash {
-    position: fixed;
-    right: 0px;
-    bottom: 0px;
+.history-container-div {
+    background-color: var(--background);
+    position: relative;
+    width: 100%;
+    height: 100px;
+    padding: 20px;
 }
 
-#trash:hover {
+.history-container-div:hover {
     background-color: var(--menu-hover);
-    border-radius: var(--radius);
+}
+
+.memory-container-div {
+    background-color: var(--background);
+    position: relative;
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.memory-container-div:hover {
+    background-color: var(--menu-hover);
+}
+
+.memory-div-result {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: right;
+}
+
+.memory-div {
+    position: absolute;
+    top: 45px;
+    width: 150px;
+    height: 30px;
+    right: 10px;
+    display: flex;
+    justify-content: space-around;
+    display: block;
+}
+
+.memory-btn-Mdelete,
+.memory-btn-Mplus,
+.memory-btn-Mminus {
+    border: none;
+    width: 32%;
+    height: 100%;
+}
+
+.memory-div button:hover {
+    background: var(--hover-gray);
+}
+
+.delete-history {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("https://img.icons8.com/ios/20/000000/delete--v2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.delete-history:hover {
+    background-color: #898989;
+}
+
+.delete-history-hidden {
+    display: none;
+}
+
+.trash-div {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    padding: 20px;
+    background: url("https://img.icons8.com/ios/20/000000/delete--v2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.trash-div:hover {
+    background-color: var(--hover-gray);
+    border-radius: var(--border);
+}
+
+.history-save,
+.memory-save {
+    display: none;
+}
+
+.menu {
+    width: 5rem;
+    height: 2rem;
+    background-color: #f4f4f4;
+    color: #333;
+    border: 1px solid #aaa;
+    box-shadow: 2px 2px 2px #999;
+    border-radius: 0.2rem;
+    list-style: none;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu,
+.off {
+    top: -200%;
+    left: -200%;
+}
+
+.menu-item {
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    font-weight: 100;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+.menu-item:hover,
+.menu-item:active {
+    color: #000;
+    font-weight: 500;
+    background: var(--hover-gray);
+}
+
+.ParaAdd {
+    font-size: 15px;
+    width: 100%;
+    height: 20%;
+    text-align: right;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.ResultAdd {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: right;
+    margin-top: 15px;
 }
 
 .first {
@@ -291,12 +464,17 @@ h1 {
             "buttons history";
     }
 
+    .Btn {
+        font-family: var(--font-family);
+        font-size: 1rem;
+    }
+
     #history {
         display: block;
         grid-area: history;
     }
 
-    .extera-m {
+    .extera {
         display: none;
     }
 
@@ -307,6 +485,41 @@ h1 {
     .small-btn-ms {
         width: 100%;
         max-width: 400px;
+    }
+
+    .history-icon-container {
+        display: none;
+    }
+
+    .history-save {
+        display: block;
+        position: absolute;
+        overflow: auto;
+        width: 320px;
+        max-width: 42%;
+        height: 83%;
+        top: 70px;
+        right: 0;
+        z-index: 1;
+        background-color: var(--background);
+    }
+
+    .memory-save {
+        display: block;
+        position: absolute;
+        overflow: auto;
+        width: 320px;
+        max-width: 42%;
+        height: 83%;
+        top: 70px;
+        right: 0;
+        z-index: 1;
+        background-color: var(--background);
+    }
+
+    .text-memory {
+        margin-top: 30px;
+        font-size: 0.9em;
     }
 }
 
@@ -329,5 +542,7 @@ h1 {
         width: 19.6%;
         height: 19.2%;
         order: 1;
+        font-family: var(--font-family);
+        font-size: 1.5rem;
     }
 }
