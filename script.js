@@ -456,6 +456,7 @@ const MemoryFunction = () => {
     history.style.border = "none";
     history.style.padding = "0";
     document.querySelector(".memory-save").style.display = "block";
+    document.querySelector("#history-elements").style.display = "none";
 };
 
 const HistoryFunction = () => {
@@ -464,6 +465,7 @@ const HistoryFunction = () => {
     memory.style.border = "none";
     memory.style.padding = "0";
     document.querySelector(".memory-save").style.display = "none";
+    document.querySelector("#history-elements").style.display = "block";
 };
 
 memory.addEventListener("click", MemoryFunction);

@@ -272,9 +272,18 @@ h1 {
     margin-left: 35px;
 }
 
+.memory:hover,
+.his:hover {
+    color: var(--hover-gray);
+}
+
 .his {
     margin-top: 7px;
     padding-bottom: 3px;
+}
+
+#history a {
+    text-decoration: none;
 }
 
 .text-history,
